@@ -1,0 +1,19 @@
+{
+  "name": "@jitsedesmet/devenv",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Personal initialization scrip for development environment",
+  "packageManager": "yarn@1.22.22",
+  "repository": "git+https://github.com/jitsedesmet/devenv#",
+  "scripts": {
+    "build:ts": "tsc -b",
+    "clean": "git clean -dfx",
+    "depcheck": "depcheck",
+    "publish": "yarn install && npm login && npm publish",
+    "version": "manual-git-changelog onversion"
+  },
+  "devDependencies": {
+    "manual-git-changelog": "^1.0.2",
+    "depcheck": "^1.4.7"
+  }
+}
