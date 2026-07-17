@@ -1,0 +1,18 @@
+# Copier configuration for the personal devcontainer template.
+# https://copier.readthedocs.io/en/stable/configuring/
+
+# Only the files under `template/` are rendered into the destination project,
+# so this repo can keep its own README, LICENSE and CI at the root.
+_subdirectory: template
+
+# Require a Copier version that supports the update workflow used here.
+_min_copier_version: "9.0.0"
+
+# ----------------------------------------------------------------------------
+# Questions
+# ----------------------------------------------------------------------------
+
+name:
+  type: str
+  help: The devcontainer name (shown in your editor / IDE).
+  default: "{{ _copier_conf.dst_path.name }}"
