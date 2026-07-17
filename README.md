@@ -3,6 +3,8 @@
 A [Copier](https://copier.readthedocs.io/) template that publishes a personal
 `.devcontainer` setup and keeps it in sync across repositories.
 
+This setup sandboxes agentic coding tools so you can run them in yolo mode without them touching your host system.
+
 The exact `.devcontainer` used for my projects lives in `template/`, so a single
 command drops it into any project and `copier update` later reconciles your local
 tweaks with new template versions using a git-style 3-way merge.
