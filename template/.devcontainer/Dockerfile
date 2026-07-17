@@ -17,5 +17,7 @@ RUN curl -fsSL https://claude.ai/install.sh | bash
 RUN git config --global alias.gitm 'commit -am' \
     && git config --global push.autoSetupRemote true \
     && git config --global core.editor nano \
-    && echo "alias gitm='git commit -am'" >> /home/node/.bashrc
+    && echo "alias gitm='git commit -am'" >> /home/node/.bashrc \
+    && echo "alias claude-yolo='claude --dangerously-skip-permissions'" >> /home/node/.bashrc \
+    && echo "alias copilot-yolo='copilot --yolo'" >> /home/node/.bashrc
 USER root
