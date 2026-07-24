@@ -11,6 +11,10 @@ tweaks with new template versions using a git-style 3-way merge.
 
 ## Requirements
 
+- Docker (or another OCI-compatible container runtime such as Podman)
+- An IDE with Dev Container support, such as:
+  - Visual Studio Code with the **Dev Containers** extension
+  - PyCharm Professional with Dev Containers support
 - [Copier](https://copier.readthedocs.io/en/latest/#installation) 9 or newer
   (`pipx install copier` / `uv tool install copier` / `brew install copier`)
 - Git 2.27 or newer
@@ -36,6 +40,18 @@ Copier refuses to overwrite existing files unless you pass `--force`, so it is s
 to run in a populated repository.
 
 Use `--defaults` to accept every default without prompting (handy in CI / scripts).
+
+### Open the development container
+
+After generating the template, open the repository in your preferred IDE and start
+the development container.
+
+- **Visual Studio Code:** Click **Reopen in Container** when prompted, or run
+  **Dev Containers: Reopen in Container** from the Command Palette.
+- **PyCharm Professional:** Open the project and use **Open in Dev Container**
+  (or the corresponding Dev Containers action).
+
+Once the container has been built, the repository is ready for development.
 
 ### Refresh the template later
 
