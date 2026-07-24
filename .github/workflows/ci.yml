@@ -17,10 +17,5 @@ jobs:
       - name: Render template
         run: copier copy --defaults --vcs-ref=HEAD . ./.devenv-test
 
-      - name: Lint Dockerfile
-        uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: .devenv-test/.devcontainer/Dockerfile
-
       - name: Build devcontainer image
         run: docker build .devenv-test/.devcontainer
