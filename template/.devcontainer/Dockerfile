@@ -1,7 +1,8 @@
 FROM node:22
 
 # Install basic development tools
-RUN apt update && apt install -y less man-db sudo curl nano
+RUN apt update && apt install -y less man-db sudo curl nano \
+    && rm -rf /var/lib/apt/lists/*
 
 # Ensure default `node` user has access to `sudo`
 ARG USERNAME=node
@@ -20,4 +21,3 @@ RUN git config --global alias.gitm 'commit -am' \
     && echo "alias gitm='git commit -am'" >> /home/node/.bashrc \
     && echo "alias claude-yolo='claude --dangerously-skip-permissions'" >> /home/node/.bashrc \
     && echo "alias copilot-yolo='copilot --yolo'" >> /home/node/.bashrc
-USER root
