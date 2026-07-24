@@ -2,7 +2,8 @@ FROM node:22
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install basic development tools
-RUN apt-get update && apt-get install -y less man-db sudo curl nano \
+# hadolint ignore=DL3008
+RUN apt-get update && apt-get install -y --no-install-recommends less man-db sudo curl nano \
     && rm -rf /var/lib/apt/lists/*
 
 # Ensure default `node` user has access to `sudo`
