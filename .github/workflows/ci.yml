@@ -15,12 +15,12 @@ jobs:
         run: pipx install copier
 
       - name: Render template
-        run: copier copy --defaults --vcs-ref=HEAD . /tmp/devenv-test
+        run: copier copy --defaults --vcs-ref=HEAD . ./.devenv-test
 
       - name: Lint Dockerfile
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: /tmp/devenv-test/.devcontainer/Dockerfile
+          dockerfile: .devenv-test/.devcontainer/Dockerfile
 
       - name: Build devcontainer image
-        run: docker build /tmp/devenv-test/.devcontainer
+        run: docker build .devenv-test/.devcontainer
